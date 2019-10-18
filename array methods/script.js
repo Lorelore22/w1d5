@@ -11,8 +11,6 @@ digits.forEach(function(digit) {
   console.log(digit);
 });
 
-console.clear();
-
 /*
 const squares = [];
 digits.forEach(function(digit) {
@@ -113,12 +111,10 @@ const flattened = nested.reduce(function(accumulator, value) {
 }, []);
 
 const odds = digits.filter(function(digit) {
-  if (digit >= 10) {
+  if (digit % 2 === 1) {
     return true;
   }
 });
-
-console.log(odds);
 
 const recentCars = garage.filter(function(car) {
   if (car.year >= 2010) {
@@ -134,3 +130,28 @@ const oneRecentCar = garage.find(function(car) {
 
 // reverses the `digits` array and assigns it's reference to `reversedDigits`
 // const reversedDigits = digits.reverse()
+
+console.clear();
+
+const randomNumbers = [3, 4, 13, 42, 0, -3, 1];
+
+randomNumbers.sort(function(a, b) {
+  return a - b;
+  //   if (a > b) {
+  //     return 1;
+  //   } else if (a === b) {
+  //     return 0;
+  //   } else {
+  //     return -1;
+  //   }
+});
+
+// sort the garage by ascending years
+// if the years are equal sort by mileage in descending order
+
+garage.sort(function(a, b) {
+  if (a.year !== b.year) {
+    return a.year - b.year;
+  }
+  return b.miles - a.miles;
+});
