@@ -80,7 +80,34 @@ garage = garage.map(function(car) {
 // ]
 
 // arr.map returns a new array
-// the array returned has for every element in the original array, the returned result of the callback function
+// the array returned has, for every element in the original array, the returned result of the callback function
 // that array has the same number of elements that arr has
 // it doesn't mutate the array in place
-console.table(garage);
+
+// let sum = 0;
+// digits.forEach(function(digit) {
+//   sum += digit;
+// });
+
+let sum = digits.reduce(function(accumulator, currentValue) {
+  return accumulator + currentValue;
+});
+
+// prettier-ignore
+const nested = [
+    "a",
+    [
+        "b", "c"
+    ], 
+    [
+        1, 2
+    ], 
+    [
+        null, {}
+    ]
+];
+
+// ["a", "b", 1, 2, null, {}]
+const flattened = nested.reduce(function(accumulator, value) {
+  return accumulator.concat(value);
+}, []);
