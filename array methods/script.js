@@ -58,6 +58,16 @@ const carMakes = garage.map(function(car) {
 
 // reassign `garage` to an array where all the cars in the original `garage` array will also have a `kms` property
 
+garage = garage.map(function(car) {
+  return {
+    make: car.make,
+    model: car.model,
+    year: car.year,
+    miles: car.miles,
+    kms: car.miles * 1.6
+  };
+});
+
 // [
 //     {
 //       make: "Toyota",
@@ -68,3 +78,9 @@ const carMakes = garage.map(function(car) {
 //     },
 //     ... for every car
 // ]
+
+// arr.map returns a new array
+// the array returned has for every element in the original array, the returned result of the callback function
+// that array has the same number of elements that arr has
+// it doesn't mutate the array in place
+console.table(garage);
