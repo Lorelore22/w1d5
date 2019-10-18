@@ -111,3 +111,26 @@ const nested = [
 const flattened = nested.reduce(function(accumulator, value) {
   return accumulator.concat(value);
 }, []);
+
+const odds = digits.filter(function(digit) {
+  if (digit >= 10) {
+    return true;
+  }
+});
+
+console.log(odds);
+
+const recentCars = garage.filter(function(car) {
+  if (car.year >= 2010) {
+    return true;
+  }
+});
+
+const oneRecentCar = garage.find(function(car) {
+  if (car.year >= 2010) {
+    return true;
+  }
+});
+
+// reverses the `digits` array and assigns it's reference to `reversedDigits`
+// const reversedDigits = digits.reverse()
